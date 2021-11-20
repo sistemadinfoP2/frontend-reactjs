@@ -7,14 +7,14 @@ import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import { toast } from 'react-toastify';
 
-const SignIn = () => {
+export function SignIn() {
     const history = useHistory();
     const formRef = useRef(null);
 
     const handleSubmit = useCallback(async (element) => {
         try {
             const { data } = await api.post('/usuarioLogin', { 
-                    usuario: element.profileObj.email
+                usuario: element.profileObj.email
             }); 
             
             localStorage.setItem('isAuthenticated', window.btoa(JSON.stringify(data)));
@@ -40,13 +40,12 @@ const SignIn = () => {
                     {/* <Input name="email" icon={FiMail} placeholder="E-mail"/> */}
                     {/* <Input name="password" icon={FiLock} type="password" placeholder="Senha"/> */}
                     <GoogleLogin
-                    clientId="906405271055-bc7ka1halimt9p2gg44m63qb8gi765nk.apps.googleusercontent.com"
-                    buttonText="Sign in with Google"
-                    onSuccess={handleSubmit}
-                    onFailure={handleSubmit}
-                    cookiePolicy={'single_host_origin'}
-                    
-  />
+                        clientId="906405271055-bc7ka1halimt9p2gg44m63qb8gi765nk.apps.googleusercontent.com"
+                        buttonText="Sign in with Google"
+                        onSuccess={handleSubmit}
+                        onFailure={handleSubmit}
+                        cookiePolicy={'single_host_origin'}
+                    />
                     {/* <button type="submit">Entrar</button> */}
                     {/* <a href="forgot">Esqueci minha senha</a> */}
                 </Form>
@@ -57,5 +56,3 @@ const SignIn = () => {
         </Container>
     )
 };
-
-export default SignIn;
