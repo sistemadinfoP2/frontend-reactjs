@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container } from './styles';
 
-import { Api } from '../../service/Api';
+import { api } from '../../services/api';
 import { ItemBox} from "../../components/ItemBox";
 
 export function Home() {
@@ -14,7 +14,7 @@ export function Home() {
 
   async function getBooks() {
     try {
-      const { data } = await Api.get('/');
+      const { data } = await api.get('/');
       setData(data);
     } catch (err) {
       console.error(err);

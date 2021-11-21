@@ -1,12 +1,12 @@
 import { Home } from './pages/Home';
-// import { SignIn } from './pages/SignIn';
+import { SignIn } from './pages/SignIn';
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <>
-      <Home />
-      {/* <SignIn /> */}
+      {/* <Home /> */}
+      <SignIn />
       <GlobalStyle />
     </>
   );
