@@ -11,11 +11,20 @@ import { auth, firebase } from '../../services/firebase';
 export function SignIn() {
     const history = useHistory();
 
+    let token = ''
+
+    if (localStorage.getItem('@Token')) {
+
+    } else {
+        console.log('nao tem token')
+    }
+
     async function actionLoginGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        auth.signInWithPopup(provider).then(result => {
-            console.log(result);
+        auth.signInWithPopup(provider).then(({ credential }) => {
+            console.log(credential.accessToken);
+            token = credential.accessToken;
         })
     }
 
