@@ -1,13 +1,16 @@
-import { Home } from './pages/Home';
-import { SignIn } from './pages/SignIn';
+
+import { BrowserRouter } from 'react-router-dom';
+
 import GlobalStyle from './styles/global';
+import { Routes } from './routes';
 
 function App() {
   return (
     <>
-      {/* <Home /> */}
-      <SignIn />
-      <GlobalStyle />
+      <BrowserRouter>
+        <Routes />
+        <GlobalStyle />
+      </BrowserRouter>
     </>
   );
 }

@@ -1,58 +1,37 @@
-import React, { useRef, useCallback } from 'react';
-import { Container, Content, Background } from './styles';
-// import logoImg from '../../assets/logodireto.png';
-// import { Form } from '@unform/web';
-// import api from '../../service/api';
+import React from 'react';
+import { Container, Content, Button } from './styles';
 import { useHistory } from 'react-router-dom';
-// import { GoogleLogin } from 'react-google-login';
-// import { toast } from 'react-toastify';
+import googleIconImg from '../../assets/google-icon.svg';
 import { auth, firebase } from '../../services/firebase';
 
 export function SignIn() {
     const history = useHistory();
-
-    let token = ''
-
-    if (localStorage.getItem('@Token')) {
-
-    } else {
-        console.log('nao tem token')
-    }
 
     async function actionLoginGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
 
         auth.signInWithPopup(provider).then(({ credential }) => {
             console.log(credential.accessToken);
-            token = credential.accessToken;
+            localStorage.setItem('@TokenLibrary', credential.accessToken);
+
+            history.push('/home');
         })
     }
-
-    // const handleSubmit = useCallback(async (element) => {
-    //     try {
-    //         const { data } = await api.post('/usuarioLogin', { 
-    //             usuario: element.profileObj.email
-    //         }); 
-            
-    //         localStorage.setItem('isAuthenticated', window.btoa(JSON.stringify(data)));
-    //         localStorage.setItem('userData', window.btoa(JSON.stringify(element.profileObj)))
-            
-    //         if (data) {
-    //             history.push('/home');               
-    //         } 
-    //     } catch (error) {
-    //         console.log(error);
-    //         toast.error('you do not have permission to access the platform');
-    //     }
-    // }, []);
 
     return (
         <Container>
             <Content>
-                <h1>Login</h1>
-                <button onClick={actionLoginGoogle}>fazer login com o google</button>
+                <h1
+                    style={{color: '#fff'}}
+                >Login</h1>
+                <Button
+                    onClick={actionLoginGoogle}
+                    className='create-room'
+                >
+                    <img src={googleIconImg} alt='Logo do Google' />
+                    Logar com o Google
+                </Button>
             </Content>
-            {/* <Background/> */}
         </Container>
     )
 };

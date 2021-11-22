@@ -1,10 +1,11 @@
 import { Container } from './styles';
-export function ItemBox({books, returnRow}) {
+export function ItemBox({books}) {
+// export function ItemBox({books, returnRow}) {
 
-  function handleRowData(rowId, rowDescription) {
-    returnRow([{id: rowId, description: rowDescription}]);
-    // hideDialog(false);
-  }
+  // function handleRowData(rowId, rowDescription) {
+  //   returnRow([{id: rowId, description: rowDescription}]);
+  //   // hideDialog(false);
+  // }
 
   return (
     books.map(item => {
@@ -21,8 +22,7 @@ export function ItemBox({books, returnRow}) {
           </div>
           <a
             href={item.bk_url}
-            target="_blank"
-              
+            target="_blank" rel="noreferrer" 
           >
             Ler
           </a>
@@ -31,13 +31,3 @@ export function ItemBox({books, returnRow}) {
     })
   );
 }
-// {data.map(item => {
-//   <div>
-//     <div style={{display: 'flex', width: '450px', justifyContent: 'space-between'}}>
-//       <div style={{display: 'flex', flexDirection: 'column'}}>
-//         <label><b>description:</b> <span>{item.description}</span></label>
-//       </div>
-//       <button>Ler</button>
-//     </div>
-//   </div>
-// })}
