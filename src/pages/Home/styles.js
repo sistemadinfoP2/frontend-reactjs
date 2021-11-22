@@ -29,8 +29,8 @@ export const Container = styled.div`
         border: transparent;
         padding: 4px;
         border-radius: 4px;
-        color: #fff;
-        background: #0b2544;
+        color: #0b2544;
+        background: #fff;
         cursor: pointer;
         font-size: 12px;
         font-weight: bold;

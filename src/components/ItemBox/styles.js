@@ -6,7 +6,7 @@ export const Container = styled.div `
   justify-content: space-between;
   align-items: center;
   border-radius: 20px;
-  background: #d3d3d3;
+  background: #fff;
   height: 80px;
   padding: 0 20px;
   margin-top: 12px;
@@ -27,7 +27,7 @@ export const Container = styled.div `
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: #000;
+    background: #0b2544;
     color: #fff;
     font-size: 15px;
     display: flex;
@@ -35,5 +35,10 @@ export const Container = styled.div `
     justify-content: center;
     text-decoration: none;
     font-family: sans-serif;
+    font-weight: bold;
+    transition: filter 0.2s;
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `;
