@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div `
-  width: 400px;
+  width: 350px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +20,8 @@ export const Container = styled.div `
     margin-top: 4px;
     width: 300px;
     font-family: arial;
+    color: #0b2544;
+    word-break: break-word;
   }
 
   a {
