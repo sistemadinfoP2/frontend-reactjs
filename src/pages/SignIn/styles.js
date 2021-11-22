@@ -1,20 +1,32 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
-
+import bgImg from '../../assets/library.jpg';
 export const Container = styled.div`
     height: 100vh;
     display: flex;
     align-items: stretch;
+    background: #0b2544 url(${bgImg}) no-repeat center;
+    background-size: 100% 100%;
 `;
 
 export const Content = styled.div`
+    background-color: #0b2544;
     display: flex;
     flex-direction: column;
     align-items: center;
     place-content: center;
     width: 100%;
     max-width: 700px;
-    background-color: #0b2544;
+
+    div {
+        border: 1px solid #fff;
+        padding: 0px 0px 45px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     @media (min-width: 720px) and (max-width: 1279px){
         max-width: 100% ;
     }
@@ -84,7 +96,7 @@ export const Background = styled.div`
 
 
 export const Button = styled.button`
-    margin-top: 64px;
+    margin-top: 16px;
     height: 50px;
     border-radius: 8px;
     font-weight: 500;

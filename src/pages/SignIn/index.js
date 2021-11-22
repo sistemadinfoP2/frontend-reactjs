@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Content, Button } from './styles';
 import { useHistory } from 'react-router-dom';
 import googleIconImg from '../../assets/google-icon.svg';
+import estacioImg from '../../assets/estacio-bg.png';
 import { auth, firebase } from '../../services/firebase';
 
 export function SignIn() {
@@ -21,16 +22,19 @@ export function SignIn() {
     return (
         <Container>
             <Content>
-                <h1
-                    style={{color: '#fff'}}
-                >Login</h1>
-                <Button
-                    onClick={actionLoginGoogle}
-                    className='create-room'
-                >
-                    <img src={googleIconImg} alt='Logo do Google' />
-                    Logar com o Google
-                </Button>
+                <div>
+                    <img src={estacioImg} alt='Logo Estácio' />
+                    <h1
+                        style={{color: '#fff', fontFamily: 'Helvetica', fontWeight: 'normal', fontSize: '1.5rem', margin: '0px 0px 16px'}}
+                    >Login Biblioteca</h1>
+                    <Button
+                        onClick={actionLoginGoogle}
+                        className='create-room'
+                    >
+                        <img src={googleIconImg} alt='Logo do Google' />
+                        Continuar com o Google
+                    </Button>
+                </div>
             </Content>
         </Container>
     )

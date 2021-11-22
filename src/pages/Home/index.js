@@ -21,8 +21,14 @@ export function Home() {
     }
   }
 
+  function logout() {
+    localStorage.removeItem('@TokenLibrary');
+    window.location.reload();
+  }
+
   return (
     <Container>
+      <button onClick={logout}>Sair</button>
       <h1
         style={{maxWidth: '400px', margin: '0 auto', fontFamily: 'Helvetica', marginTop: '40px'}}>
           Biblioteca Online

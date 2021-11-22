@@ -20,4 +20,20 @@ export const Container = styled.div`
     .dialog-demo .p-dialog .p-button {
         min-width: 6rem;
     }
+
+    button {
+        margin-top: 10px;
+        width: 80px;
+        position: absolute;
+        right: 2%;
+        border: transparent;
+        padding: 4px;
+        border-radius: 4px;
+        color: #fff;
+        background: #0b2544;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: helvetica;
+    }
 `
